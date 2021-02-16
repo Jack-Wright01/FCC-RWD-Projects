@@ -1,0 +1,122 @@
+:root {
+  --primary-clr: #FFF;
+  --secondary-clr: #333;
+  --complimentary-clr: #0a6e1f;
+}
+
+body {
+  fixed-width: 100%;
+  font-family: "Hind Siliguri", sans-seriff;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  padding-top: 50px;
+  font-size: 35px;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--complimentary-clr);
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in;
+  transform-origin: right;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li {
+  text-align: left;
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+  font-size: 20px;
+}
+
+#img-div {
+  background-color: var(--secondary-clr);
+  padding-top: 20px;
+}
+
+#image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+#img-caption {
+  color: var(--primary-clr);
+  padding-bottom: 15px;
+  font-size: 18px;
+}
+
+#tribute-info {
+  font-size: 25px;
+}
+
+.subtitle {
+  position: relative;
+  font-size: 25px;
+  bottom: 40px;
+}
+
+.quote {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin: auto;
+  width: 400px;
+  font-style: italic;
+  opacity: 60%;
+}
+
+.quote::before {
+  content: open-quote;
+  position: relative;
+  bottom: 30px;
+  float: left;
+  font-size: 60px;
+  font-style: bold;
+  color: var(--complimentary-clr)
+}
+
+.quote::after {
+  content: ' -Marie Curie';
+  font-size: 20px;
+  font-style: normal;
+  position: relative;
+  top: 20px;
+  left: 40px;
+}
+
+@media(max-width: 400px) {
+  li {
+    width: 90%;
+  }
+  
+  .quote {
+    width: 90%;
+  }
+}
